@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MySignButton">
+        <item name="android:radius">10dp</item>
+        <item name="cardBackgroundColor">@color/greyCards</item>
+    </style>
+</resources>

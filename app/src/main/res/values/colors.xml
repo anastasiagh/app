@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#228B22</color>
     <color name="red">#FF0000</color>
+    <color name="greyDefault">#FFFFFF</color>
+    <color name="greyCards">#F1F1F1</color>
+    <color name="caramel">#b26d22</color>
+    <color name="blue">#123f56</color>
 </resources>

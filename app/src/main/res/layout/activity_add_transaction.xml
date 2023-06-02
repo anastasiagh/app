@@ -26,20 +26,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/labelLayout"
+            android:id="@+id/expenseNameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:hint="Label"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Expense"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/labelInput"
+                android:id="@+id/expenseNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_label"
+                android:drawableStart="@drawable/store"
                 android:drawablePadding="12dp"
                 android:maxLines="1"
                 android:inputType="text"/>
@@ -50,8 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:hint="Amount"
             app:errorEnabled="true">
 
@@ -59,41 +59,62 @@
                 android:id="@+id/amountInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_money"
+                android:drawableStart="@drawable/amount"
                 android:drawablePadding="12dp"
                 android:maxLines="1"
                 android:inputType="numberDecimal"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/descriptionLayout"
+            android:id="@+id/dateLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:hint="Description"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Date"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/descriptionInput"
+                android:id="@+id/dateInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_description"
+                android:drawableStart="@drawable/date"
                 android:drawablePadding="12dp"
                 android:maxLines="1"
-                android:inputType="text"/>
+                android:inputType="date|datetime"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/typeOfExpenseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Expense"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/typeOfExpenseInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/store"
+                android:drawablePadding="12dp"
+                android:maxLines="1"
+                android:inputType="date"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/addTransactionButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:text="Add transaction"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:background="@color/green"
-            android:padding="12dp"/>
+            app:backgroundTint="#6E61B6"
+            android:textColor="@color/white"
+            app:cornerRadius="14dp"
+            android:padding="14dp"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,10 @@ class AddTransactionActivity : AppCompatActivity() {
         binding = ActivityAddTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.labelInput.addTextChangedListener {
+
+        binding.expenseNameInput.addTextChangedListener {
             if(it!!.count() > 0)
-                binding.labelLayout.error = null
+                binding.expenseNameLayout.error = null
         }
 
         binding.amountInput.addTextChangedListener {
@@ -30,12 +31,12 @@ class AddTransactionActivity : AppCompatActivity() {
         }
 
         binding.addTransactionButton.setOnClickListener {
-            val label = binding.labelInput.text.toString()
+            val label = binding.expenseNameInput.text.toString()
             val amount = binding.amountInput.text.toString().toDoubleOrNull()
-            val description = binding.descriptionInput.text.toString()
+            val description = binding.dateInput.text.toString()
 
             if(label.isEmpty())
-                binding.labelLayout.error = "Please enter a valid label"
+                binding.expenseNameLayout.error = "Please enter a valid label"
             else if(amount == null)
                 binding.amountLayout.error = "Please enter a valid amount"
             else {

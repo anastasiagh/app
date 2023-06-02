@@ -23,9 +23,18 @@ import com.google.android.gms.vision.text.TextRecognizer
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+//import com.squareup.okhttp.OkHttpClient
+//import com.squareup.okhttp.Request
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.lang.Exception
 import java.security.Permissions
 import java.util.jar.Manifest
+import java.net.HttpURLConnection
+import java.net.URI
+import java.net.URL
+import java.net.URLEncoder
+
 
 class ScanActivity : AppCompatActivity() {
     private lateinit var binding: ActivityScanBinding
@@ -44,6 +53,7 @@ class ScanActivity : AppCompatActivity() {
 
     private lateinit var textRecognizer: com.google.mlkit.vision.text.TextRecognizer
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scan)
@@ -58,7 +68,6 @@ class ScanActivity : AppCompatActivity() {
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
-//        val textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
         textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
 
         binding.takeImageButton.setOnClickListener {
@@ -88,8 +97,35 @@ class ScanActivity : AppCompatActivity() {
                 progressDialog.dismiss()
 
                 val recognizedText = text.text
-
-                binding.recognizedTextInput.setText(recognizedText)
+                print(recognizedText)
+//                try {
+//                    val client = OkHttpClient()
+//                    val url = URL("https://reqres.in/api/users?page=2")
+//
+//                    val request = Request.Builder()
+//                            .url(url)
+//                            .get()
+//                            .build()
+//
+//                    val response = client.newCall(request).execute()
+//
+//                    val responseBody = response.body!!.string()
+//
+//                    //Response
+//                    println("Response Body: " + responseBody)
+//
+//                    //we could use jackson if we got a JSON
+//                    val mapperAll = ObjectMapper()
+//                    val objData = mapperAll.readTree(responseBody)
+//
+//                    objData.get("data").forEachIndexed { index, jsonNode ->
+//                        println("$index $jsonNode")
+//                    }
+//
+//                } catch (e: Exception) {
+//                        showToast("Failed ${e.message}")
+//                }
+                    binding.recognizedTextInput.setText(recognizedText)
             }
                 .addOnFailureListener { e ->
                     progressDialog.dismiss()
